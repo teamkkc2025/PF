@@ -567,7 +567,7 @@ def download_excel(df, filename="Epf_challan_data.xlsx"):
 def main():
     # App header with PIL Image and columns approach
     try:
-        logo = Image.open("assets/kkc logo.png")
+        logo = Image.open("kkc logo.png")
         
         st.markdown('<div class="custom-header">', unsafe_allow_html=True)
 
