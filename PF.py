@@ -36,6 +36,36 @@ st.markdown("""
         box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
     }
     
+    /* Subtitle styling */
+    .subtitle-section {
+        background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+        padding: 1rem 2rem;
+        border-radius: 12px;
+        margin: 1.5rem 0;
+        text-align: center;
+        border: 1px solid rgba(102, 126, 234, 0.2);
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.1);
+    }
+    
+    .subtitle-text {
+        color: #667eea;
+        font-family: 'Inter', sans-serif;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin: 0;
+        letter-spacing: 0.5px;
+        line-height: 1.4;
+    }
+    
+    .subtitle-secondary {
+        color: #764ba2;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.95rem;
+        font-weight: 500;
+        margin: 0.3rem 0 0 0;
+        opacity: 0.9;
+    }
+    
     /* Card Styling */
     .info-card {
         background: white;
@@ -591,6 +621,14 @@ def main():
         
         st.markdown('</div>', unsafe_allow_html=True)
         
+        # Add the subtitle section
+        st.markdown("""
+        <div class="subtitle-section">
+            <p class="subtitle-text">COMBINED CHALLAN OF A/C NO. 01, 02, 10, 21 & 22</p>
+            <p class="subtitle-secondary">WITH EMPLOYEES' PROVIDENT FUND ORGANISATION</p>
+        </div>
+        """, unsafe_allow_html=True)
+        
     except Exception as e:
         # Fallback header if logo can't be loaded
         st.markdown("""
@@ -600,6 +638,14 @@ def main():
         </div>
         """, unsafe_allow_html=True)
         st.warning(f"Could not load logo: {e}")
+        
+        # Add the subtitle section (even in fallback)
+        st.markdown("""
+        <div class="subtitle-section">
+            <p class="subtitle-text">COMBINED CHALLAN OF A/C NO. 01, 02, 10, 21 & 22</p>
+            <p class="subtitle-secondary">WITH EMPLOYEES' PROVIDENT FUND ORGANISATION</p>
+        </div>
+        """, unsafe_allow_html=True)
     
     # Enhanced Sidebar
     with st.sidebar:
@@ -934,7 +980,6 @@ def main():
         # Welcome message when no files uploaded
         st.markdown("""
         <div style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); padding: 3rem; border-radius: 15px; text-align: center; margin: 2rem 0;">
-            <h2 style="color: #667eea; margin-bottom: 1rem;">👋 Welcome to EPF Challan Extractor</h2>
             <p style="color: #666; font-size: 1.1rem; margin-bottom: 2rem;">Upload your EPF challan PDF files to get started with automated data extraction and analysis</p>
             <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
                 <div style="background: white; padding: 1rem; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
